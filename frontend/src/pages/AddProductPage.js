@@ -317,7 +317,7 @@ const AddProductPage = () => {
               </Button>
               
               <div className="space-y-2">
-                <Select value={formData.colorName} onValueChange={handleColorSelect}>
+                <Select value={formData.colorName || ""} onValueChange={handleColorSelect}>
                   <SelectTrigger className={errors.colorName ? 'border-red-500' : ''}>
                     <SelectValue placeholder="Pick color" />
                   </SelectTrigger>
