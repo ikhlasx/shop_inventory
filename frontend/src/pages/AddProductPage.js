@@ -247,7 +247,7 @@ const AddProductPage = () => {
             {/* Category */}
             <div className="space-y-2">
               <Label>Category *</Label>
-              <Select value={formData.category} onValueChange={(value) => handleInputChange('category', value)}>
+              <Select value={formData.category || ""} onValueChange={(value) => handleInputChange('category', value)}>
                 <SelectTrigger className={errors.category ? 'border-red-500' : ''}>
                   <SelectValue placeholder="Select category" />
                 </SelectTrigger>
