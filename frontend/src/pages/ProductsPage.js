@@ -106,7 +106,7 @@ const ProductsPage = () => {
                 />
               </div>
             </div>
-            <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+            <Select value={categoryFilter || ""} onValueChange={(value) => setCategoryFilter(value || undefined)}>
               <SelectTrigger className="w-full sm:w-48">
                 <SelectValue placeholder="All Categories" />
               </SelectTrigger>
