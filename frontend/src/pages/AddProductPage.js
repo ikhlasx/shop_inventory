@@ -318,11 +318,12 @@ const AddProductPage = () => {
               </Button>
               
               <div className="space-y-2">
-                <Select value={formData.colorName || ""} onValueChange={handleColorSelect}>
+                <Select value={formData.colorName || "default"} onValueChange={(value) => handleColorSelect(value === "default" ? "" : value)}>
                   <SelectTrigger className={errors.colorName ? 'border-red-500' : ''}>
                     <SelectValue placeholder="Pick color" />
                   </SelectTrigger>
                   <SelectContent>
+                    <SelectItem value="default" disabled>Pick color</SelectItem>
                     {colorOptions.map(color => (
                       <SelectItem key={color.value} value={color.value}>
                         <div className="flex items-center gap-2">
