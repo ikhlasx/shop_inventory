@@ -247,11 +247,12 @@ const AddProductPage = () => {
             {/* Category */}
             <div className="space-y-2">
               <Label>Category *</Label>
-              <Select value={formData.category || ""} onValueChange={(value) => handleInputChange('category', value)}>
+              <Select value={formData.category || "default"} onValueChange={(value) => handleInputChange('category', value === "default" ? "" : value)}>
                 <SelectTrigger className={errors.category ? 'border-red-500' : ''}>
                   <SelectValue placeholder="Select category" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="default" disabled>Select category</SelectItem>
                   {categoryOptions.map(option => (
                     <SelectItem key={option.value} value={option.value}>
                       {option.label}
