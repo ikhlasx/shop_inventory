@@ -106,12 +106,12 @@ const ProductsPage = () => {
                 />
               </div>
             </div>
-            <Select value={categoryFilter || ""} onValueChange={(value) => setCategoryFilter(value || undefined)}>
+            <Select value={categoryFilter || "all"} onValueChange={(value) => setCategoryFilter(value === "all" ? undefined : value)}>
               <SelectTrigger className="w-full sm:w-48">
                 <SelectValue placeholder="All Categories" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Categories</SelectItem>
+                <SelectItem value="all">All Categories</SelectItem>
                 <SelectItem value="wool">Wool</SelectItem>
                 <SelectItem value="silk">Silk</SelectItem>
                 <SelectItem value="cotton">Cotton</SelectItem>
