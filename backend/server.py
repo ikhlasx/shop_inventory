@@ -10,12 +10,23 @@ from typing import List, Optional, Dict, Any
 import uuid
 from datetime import datetime, timezone
 from enum import Enum
+from urllib.parse import quote_plus
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
+
+# Handle URL encoding for MongoDB connection string if needed
+if 'MONGO_USERNAME' in os.environ and 'MONGO_PASSWORD' in os.environ:
+    # If username and password are provided separately, construct the URL with proper encoding
+    username = quote_plus(os.environ['MONGO_USERNAME'])
+    password = quote_plus(os.environ['MONGO_PASSWORD'])
+    mongo_host = os.environ.get('MONGO_HOST', 'cluster0.irq0hhv.mongodb.net')
+    mongo_options = os.environ.get('MONGO_OPTIONS', '?retryWrites=true&w=majority&appName=Cluster0')
+    mongo_url = f"mongodb+srv://{username}:{password}@{mongo_host}/{mongo_options}"
+
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
