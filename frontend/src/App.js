@@ -12,7 +12,14 @@ import SalesPage from './pages/SalesPage';
 import AddProductPage from './pages/AddProductPage';
 import PrintLabelPage from './pages/PrintLabelPage';
 
+// Utils
+import testApiConnection from './utils/apiTest';
+
 function App() {
+  useEffect(() => {
+    // Test API connection on app load
+    testApiConnection();
+  }, []);
   return (
     <div className="App min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       <Router>

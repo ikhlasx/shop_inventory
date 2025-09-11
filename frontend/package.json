@@ -61,9 +61,9 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "GENERATE_SOURCEMAP=false craco build",
     "test": "craco test",
-    "vercel-build": "npm run build"
+    "vercel-build": "GENERATE_SOURCEMAP=false npm run build"
   },
   "browserslist": {
     "production": [
