@@ -10,7 +10,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import ColorDetector from '../components/ColorDetector';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+import config from '../config';
+
+const BACKEND_URL = config.BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const AddProductPage = () => {

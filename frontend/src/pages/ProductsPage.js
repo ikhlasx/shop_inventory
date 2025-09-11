@@ -8,8 +8,9 @@ import { Input } from '../components/ui/input';
 import { Badge } from '../components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import axios from 'axios';
+import config from '../config';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = config.BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const ProductsPage = () => {

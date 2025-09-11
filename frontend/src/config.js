@@ -1,7 +1,7 @@
 // Configuration file for environment variables
 const config = {
   // Backend API URL - can be set via environment variable or use default
-  BACKEND_URL: process.env.REACT_APP_BACKEND_URL || 'https://your-backend-domain.com',
+  BACKEND_URL: process.env.REACT_APP_BACKEND_URL || 'https://shop-inventory-dlpv.onrender.com',
   
   // Environment detection
   IS_PRODUCTION: process.env.NODE_ENV === 'production',
