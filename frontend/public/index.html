@@ -81,6 +81,14 @@
             </div>
         </a>
         <script>
+            // Error handling for third-party scripts
+            window.addEventListener('error', function(e) {
+                if (e.filename && e.filename.includes('share-modal')) {
+                    e.preventDefault();
+                    console.warn('Share modal script error suppressed:', e.message);
+                }
+            });
+            
             !(function (t, e) {
                 var o, n, p, r;
                 e.__SV ||

@@ -17,7 +17,7 @@ services:
       - key: DB_NAME
         sync: false
       - key: CORS_ORIGINS
-        value: "*"
+        value: "https://shop-inventory-xi.vercel.app,http://localhost:3000,*"
       - key: PORT
         value: "10000"
     # Auto-deploy on push to main branch
